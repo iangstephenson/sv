@@ -1,0 +1,39 @@
+{
+  "service": "data.soccerverse.com",
+  "request": {
+    "method": "GET",
+    "url": "https://data.soccerverse.com/players",
+    "headers": {
+      "Accept": "application/json"
+    },
+    "params": {
+      "fields": ["name", "age", "RT"],
+      "search": {
+        "name": "optional string",
+        "age": {
+          "operator": "eq|gt|lt|gte|lte",
+          "value": 25
+        },
+        "RT": {
+          "operator": "eq|gt|lt|gte|lte",
+          "value": 85
+        },
+        "AVAIL": {
+          "operator": "eq|gt|lt|gte|lte",
+          "value": 1
+        }
+      }
+    }
+  },
+  "response": {
+    "players": [
+      {
+        "data-players-id": "string",
+        "name": "string",
+        "age": "number",
+        "RT": "number",
+        "AVAIL": "number"
+      }
+    ]
+  }
+}
